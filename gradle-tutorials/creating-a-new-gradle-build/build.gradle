@@ -1,0 +1,33 @@
+plugins {
+	id 'base'
+}
+
+group = 'no.njm.gradle'
+version = '1.0'
+description = 'New Gradle build'
+
+def source = 'src'
+def target = 'target'
+
+// Custom copy task.
+task copy(type: Copy) {
+    description "Copies all text files from the 'src' directory to the 'dest' directory."
+    from "$source"
+    into "$target"
+    include '**/*.txt'
+}
+
+// Add behaviour to the clean task.
+clean.doFirst {
+    delete "$target"
+}
+
+task zip(type: Zip) {
+	from "$source"
+}
+
+// Adding properties to a previously configured task.
+zip.description = "Package the content of the 'src' directory into a Zip-file."
+
+
+

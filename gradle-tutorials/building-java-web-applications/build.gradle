@@ -1,0 +1,22 @@
+plugins {
+    id 'war'
+    id 'org.gretty' version '2.3.1'
+}
+
+repositories {
+    jcenter()   
+}
+
+gretty {
+  httpPort = 9000
+  contextPath = '/gradle-webapp'
+  // Added to work with JDK9. Specific Jetty versionis set inn gradle.properties.
+  servletContainer = 'jetty9.4'
+}
+
+dependencies {
+    providedCompile 'javax.servlet:javax.servlet-api:3.+' 
+    
+    testImplementation 'junit:junit:4.+'
+    testImplementation 'org.mockito:mockito-core:2.+'
+}
