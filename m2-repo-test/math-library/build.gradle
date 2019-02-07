@@ -1,0 +1,26 @@
+plugins {
+    // See https://docs.gradle.org/current/userguide/java_library_plugin.html for details.
+    id 'java-library'
+    id 'maven-publish'
+}
+
+group = 'no.njm'
+version = '1.0'
+
+publishing {
+    publications {
+        mathLibrary(MavenPublication) {
+            from components.java
+        }
+    }
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.12'
+}
+
+task install(dependsOn: publishToMavenLocal)
