@@ -1,7 +1,7 @@
 plugins {
     `maven-publish`
-    kotlin("jvm") version "1.3.21"
-    id("org.jetbrains.dokka") version "0.9.17"
+    kotlin("jvm") version "1.3.40"
+    id("org.jetbrains.dokka") version "0.9.18"
 }
 
 group = "no.njm"
