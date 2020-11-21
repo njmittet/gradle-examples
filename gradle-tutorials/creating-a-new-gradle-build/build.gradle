@@ -11,7 +11,7 @@ def target = 'target'
 
 // Custom copy task.
 task copy(type: Copy) {
-    description "Copies all text files from the 'src' directory to the 'dest' directory."
+    description "Copies all text files from the 'src' directory to the 'target' directory."
     from "$source"
     into "$target"
     include '**/*.txt'
@@ -28,6 +28,3 @@ task zip(type: Zip) {
 
 // Adding properties to a previously configured task.
 zip.description = "Package the content of the 'src' directory into a Zip-file."
-
-
-

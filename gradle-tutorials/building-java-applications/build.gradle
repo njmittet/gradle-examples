@@ -1,5 +1,4 @@
 plugins {
-	id 'java'
 	id 'application'
 }
 
@@ -7,12 +6,17 @@ repositories {
     jcenter()
 }
 
-dependencies {
-    implementation 'com.google.guava:guava:21.0'
+java.sourceCompatibility = JavaVersion.VERSION_11
 
-    testImplementation 'junit:junit:4.12'
+dependencies {
+    implementation 'com.google.guava:guava:30.0-jre'
+
+    testImplementation(platform('org.junit:junit-bom:5.7.0'))
+    testImplementation('org.junit.jupiter:junit-jupiter')
 }
 
-// Used by the application plugin to start the Java application.
-mainClassName = 'App'
+test {
+    useJUnitPlatform()
+}
 
+mainClassName = 'Application'

@@ -1,0 +1,33 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+}
+
+group = 'no.njm'
+version = '1.0'
+
+java.sourceCompatibility = JavaVersion.VERSION_11
+
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    testImplementation(platform('org.junit:junit-bom:5.7.0'))
+    testImplementation('org.junit.jupiter:junit-jupiter')
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+             from components.java
+        }
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
+
+task install(dependsOn: publishToMavenLocal)

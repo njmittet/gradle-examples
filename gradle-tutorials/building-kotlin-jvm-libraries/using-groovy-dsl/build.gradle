@@ -1,0 +1,28 @@
+plugins {
+	id 'java-library'
+    id 'org.jetbrains.kotlin.jvm' version '1.4.10'
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+	implementation platform('org.jetbrains.kotlin:kotlin-bom')
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
+    implementation 'org.jetbrains.kotlin:kotlin-reflect'
+
+    testImplementation(platform('org.junit:junit-bom:5.7.0'))
+    testImplementation('org.junit.jupiter:junit-jupiter')
+}
+
+compileKotlin {
+    kotlinOptions {
+        freeCompilerArgs = ["-Xjsr305=strict"]
+        jvmTarget = "11"
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
