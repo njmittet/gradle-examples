@@ -1,0 +1,14 @@
+plugins {
+    // The application specific convention plugin defined in the buildSrc directory.
+    id 'no.njm.java-application-conventions'
+}
+
+dependencies {
+    // The 'utilities' module exposes the 'list' module as an 'api' dependency, making it accessible to
+    // this application.
+    implementation project(':utilities')
+}
+
+application {
+    mainClass = 'no.njm.app.Application'
+}

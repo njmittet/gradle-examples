@@ -1,0 +1,4 @@
+plugins {
+    // The Java library specific convention plugin defined in the buildSrc directory.
+    id 'no.njm.java-library-conventions'
+}

@@ -1,0 +1,3 @@
+# Explicit Windows files using 'crlf' line endings.
+*.bat           text eol=crlf
+

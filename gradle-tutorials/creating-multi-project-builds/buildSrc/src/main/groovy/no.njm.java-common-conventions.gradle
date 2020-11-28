@@ -1,0 +1,17 @@
+// A common convention plugin providing share build configuration.
+plugins {
+    id 'java'
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    testImplementation(platform('org.junit:junit-bom:5.7.+'))
+    testImplementation('org.junit.jupiter:junit-jupiter')
+}
+
+test {
+    useJUnitPlatform()
+}

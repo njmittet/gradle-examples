@@ -1,0 +1,11 @@
+# Gradle
+build
+.gradle
+
+# Java
+*.jar
+
+# Editor
+.idea
+out
+

@@ -1,0 +1,9 @@
+plugins {
+    // The Java library specific convention plugin defined in the buildSrc directory.
+    id 'no.njm.java-library-conventions'
+}
+
+dependencies {
+    // Exposes the 'list' module as an 'api' dependency, making it accessible users of this dependency.
+    api project(':list')
+}
